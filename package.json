@@ -1,0 +1,22 @@
+{
+  "name": "tarea-script-capitol",
+  "version": "1.0.0",
+  "description": "'tarea primera entrevista capitol'",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capitol/tarea.git"
+  },
+  "author": "david figuera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/capitol/tarea/issues"
+  },
+  "homepage": "https://github.com/capitol/tarea#readme",
+  "devDependencies": {
+    "jest": "^30.0.2"
+  }
+}
