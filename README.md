@@ -1,6 +1,6 @@
 ### tarea primera entrevista capitol
 
-USO:
+COMO USAR:
 
 Para correr codigo en consola `npm run start`
 
