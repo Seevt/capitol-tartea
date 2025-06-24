@@ -1,4 +1,4 @@
-const categories = [
+export const categories = [
   {
     name: "category1",
     subcategories: [
@@ -23,14 +23,26 @@ const categories = [
   },
 ];
 
-// TO-DO: Implement this function
-const getCategoryPath = (categories, categoryName) => {
-  let path;
-
-  return path;
+const findPath = (nodes, target, currentPath) => {
+  for (const node of nodes) {
+    const newPath = [...currentPath, node.name];
+    if (node.name === target) {
+      return newPath;
+    }
+    const result = findPath(node.subcategories, target, newPath);
+    if (result) {
+      return result;
+    }
+  }
+  return null;
 };
 
-// OUTPUT SAMPLES
-console.log(getCategoryPath(categories, "category4")); // should output: '/category1/category3/category4'
-console.log(getCategoryPath(categories, "category2")); // should output: '/category1/category2'
-console.log(getCategoryPath(categories, "category5")); // should output: '/category5'
+export const getCategoryPath = (categories, categoryName) => {
+  const pathArray = findPath(categories, categoryName, []);
+  return pathArray ? "/" + pathArray.join("/") : undefined;
+};
+
+// // OUTPUT SAMPLES
+// console.log(getCategoryPath(categories, "category4")); // should output: '/category1/category3/category4'
+// console.log(getCategoryPath(categories, "category2")); // should output: '/category1/category2'
+// console.log(getCategoryPath(categories, "category5")); // should output: '/category5'
